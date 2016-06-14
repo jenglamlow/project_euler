@@ -50,19 +50,20 @@ print(sum)
 # Even Fibonacci Sequence F(n) = 4F(n-3) + F(n-6)
 # Recursive
 def r_even_fibonacci(n):
-	if (n == 0):
-		return 2
-	elif (n ==  1):
-		return 8
-	return 4*r_even_fibonacci(n-1) + r_even_fibonacci(n-2)
+    if (n == 0):
+        return 2
+    elif (n ==  1):
+        return 8
+    return 4*r_even_fibonacci(n-1) + r_even_fibonacci(n-2)
 
 F = 0
 i = 0
 sum = 0
 while True:
-	F = r_even_fibonacci(i)
-	if F > L:
-		break
-	i += 1
-	sum += F
+    F = r_even_fibonacci(i)
+    if F > L:
+        break
+    i += 1
+    sum += F
 print(sum)
+
