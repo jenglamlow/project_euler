@@ -24,8 +24,6 @@ def answer(N):
 # print(answer(2000000))
 
 # Solution (Sieve of Eratosthenes)
-
-
 def solution(N):
     L = N + 1
     sieve = [False] * L
@@ -42,5 +40,46 @@ def solution(N):
 
     return sum(primes)
 
-print(solution(2000000))
+# print(solution(2000000))
 
+
+def solution2(N):
+    L = int(sqrt(N))
+    sieve = [False] * N
+    for i in range(4, N, 2):
+        sieve[i] = True
+
+    for i in range(3, L, 2):
+        if not sieve[i]:
+            for j in range(i*i, N, 2*i):
+                sieve[j] = True
+
+    sum = 0
+    for i in range(2, N):
+        if not sieve[i]:
+            sum = sum + i
+
+    return sum
+
+# print(solution2(2000000))
+
+
+# Odd solution
+def solution3(N):
+    sievebound = int((N-1) /2)
+    sieve = [False] * sievebound
+    crosslimit = int((sqrt(N)-1) / 2)
+
+    for i in range(1, crosslimit):
+        if not sieve[i]:
+            for j in range(2*i*(i+1), sievebound, 2*i+1):
+                sieve[j] = True
+
+    sum = 2
+    for i in range(1, sievebound):
+        if not sieve[i]:
+            sum = sum + 2*i+1
+
+    return sum
+
+print(solution3(2000000))
