@@ -29,6 +29,7 @@ def num_of_divisor(n):
                 count += 1
     return count
 
+
 def answer():
     n = 1
     N = 1
@@ -40,4 +41,35 @@ def answer():
 
     return n
 
-print(answer())
+# print(answer())
+
+
+# def solution():
+#     n = 3
+#     Dn = 2
+#     cnt = 0
+
+#     while cnt <= 500:
+#         n += 1
+#         n1 = n
+#         if n1 % 2 == 0:
+#             n1 = n1/2
+#         Dn1 = 1
+
+#         for i in range(1,len(P)):
+#             if P[i] * P[i] > n1:
+#                 Dn1 = 2 * Dn1
+
+#             exponent = 1
+#             while n1 % P[i] == 0:
+#                 exponent+=1
+#                 n1 = n1/P[i]
+
+#             if exponent > 1:
+#                 Dn1 = Dn1 * exponent
+#             if n1 = 1:
+#                 break
+#         cnt = Dn * Dn1
+#         Dn = Dn1
+
+#     return n * (n - 1) / 2
