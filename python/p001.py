@@ -16,6 +16,6 @@ print(sum([x for x in range(1000) if x%3==0 or x%5==0]))
 N = 1000
 
 def sum_divisible_by(d):
-    n = (N - 1) / d
-    return (d*n*(1+n))/2
+    n = int((N - 1) / d)
+    return (d*n*(1+n))>>1
 print(sum_divisible_by(3) + sum_divisible_by(5) - sum_divisible_by(15))
