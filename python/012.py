@@ -25,7 +25,7 @@ def num_of_divisor(n):
     for i in range(1, int(sqrt(n))):
         if n % i == 0:
             count += 1
-            if n % i != i:
+            if n / i != i:
                 count += 1
     return count
 
@@ -41,7 +41,7 @@ def answer():
 
     return n
 
-# print(answer())
+print(answer())
 
 
 # def solution():
