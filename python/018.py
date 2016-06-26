@@ -1,13 +1,13 @@
 
-M = []
+matrix = []
 
 with open("018.txt") as file:
     for line in file:
         line_list = [int(i) for i in line.split()]
-        M.insert(0, line_list)
+        matrix.insert(0, line_list)
 
 
-def answer():
+def answer(M):
     sum_left = 0
     sum_right = 0
 
@@ -22,4 +22,28 @@ def answer():
 
     return(M[0][0])
 
-print(answer())
+# print(answer(matrix[:]))
+
+
+def answer2(M):
+    for i in range(len(M)-1):
+        for j in range(len(M[i])-1):
+            M[i+1][j] += max(M[i][j],M[i][j+1])
+
+    return(M[len(M)-1][0])
+
+# print(answer2(matrix[:]))
+
+
+def maximum(M):
+    for i in range(len(M[0])-1):
+        M[1][i] += max(M[0][i], M[0][i+1])
+
+    del M[0]
+
+    if len(M) != 1:
+        return maximum(M)
+    else:
+        return M[0][0]
+
+print(maximum(matrix[:]))

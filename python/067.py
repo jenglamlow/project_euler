@@ -23,3 +23,5 @@ def answer():
     return(M[0][0])
 
 print(answer())
+
+# Refer to Problem 18 python for better solution
