@@ -1,7 +1,7 @@
 
 matrix = []
 
-with open("018.txt") as file:
+with open("p018_triangle.txt") as file:
     for line in file:
         line_list = [int(i) for i in line.split()]
         matrix.insert(0, line_list)
