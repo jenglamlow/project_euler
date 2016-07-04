@@ -67,3 +67,29 @@ while True:
     sum += F
 print(sum)
 
+# Pass Hacker Rank Test Cases
+T = int(input())
+
+cache = {}
+def r_even_fibonacci(n):
+    if (n == 0):
+        return 2
+    elif (n ==  1):
+        return 8
+    elif cache.get(n) != None:
+        return cache.get(n)
+    return 4*r_even_fibonacci(n-1) + r_even_fibonacci(n-2)
+
+for i in range(T):
+    N = int(input())
+    F = 0
+    i = 0
+    sum = 0
+    while True:
+        F = r_even_fibonacci(i)
+        cache[i] = F
+        if F > N:
+            break
+        i += 1
+        sum += F
+    print(sum)
