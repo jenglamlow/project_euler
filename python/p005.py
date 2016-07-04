@@ -23,3 +23,22 @@ print(answer())
 # Solution
 # N = 2 * 3 * 2 * 5 * 7 * 2 * 3 * 11 * 13 * 2 * 17 * 19
 
+# HackerRank
+def is_divisible(n, N):
+    for p in range(2, N):
+        if n % p != 0:
+            return False
+
+    return True
+
+
+def answer(N):
+    n = N
+    while True:
+        if is_divisible(n, N):
+            return n
+        n = n + N
+        
+for _ in range(int(input())):
+    print(answer(int(input())))
+
