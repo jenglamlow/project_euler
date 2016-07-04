@@ -53,3 +53,34 @@ def solution():
     return largestPalindrome
 
 print(solution())
+
+# HackerRank
+def is_palindrome(n):
+    return str(n) == str(n)[::-1]
+
+def solution(N):
+    a = 999
+    largestPalindrome = 0
+    while a >= 100:
+        if a % 11 == 0:
+            b = 999
+            db = 1
+        else:
+            b = 990
+            db = 11
+
+        while (b >= a):
+            if a * b <= largestPalindrome:
+                break
+
+            if is_palindrome(a*b):
+                if a * b < int(N):
+                    largestPalindrome = a * b
+
+            b = b - db
+        a = a - 1
+
+    return largestPalindrome
+
+for _ in range(int(input())):
+    print(int(solution(input())))
