@@ -41,7 +41,7 @@ def max_prime_factor_solution(n):
 
     factor = 3
     max_factor = sqrt(n)
-    while n > 1 and factor < max_factor:
+    while n > 1 and factor <= max_factor:
         if n % factor == 0:
             n = n / factor
             last_factor = factor
